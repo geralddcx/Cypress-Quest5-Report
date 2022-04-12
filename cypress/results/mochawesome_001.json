@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-12T09:19:26.593Z",
+    "end": "2022-04-12T09:19:31.862Z",
+    "duration": 5269,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9546f323-84b6-44bb-b5a6-e47b6c0f3ff6",
+      "title": "",
+      "fullFile": "cypress/integration/creation/test_creation_user_wrong_email.spec.js",
+      "file": "cypress/integration/creation/test_creation_user_wrong_email.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a84e07d3-ec83-4e26-8b12-c9e6457d8402",
+          "title": "Un utilisateur veut créer un nouveau compte avec nom prénom mail erroné et mot de passe valide",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "nom prénom et mot de passe correct mais pas le mail",
+              "fullTitle": "Un utilisateur veut créer un nouveau compte avec nom prénom mail erroné et mot de passe valide nom prénom et mot de passe correct mais pas le mail",
+              "timedOut": null,
+              "duration": 4141,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#firstName').type('jenson');\ncy.get('#lastName').type('wiatt');\ncy.get(\"#signup-email\").type('jenson.wiatt.com');\ncy.get(\"#signup-password\").type('Azerty123456');\ncy.get('[data-qa=\"signup-submit-button\"]').click(); // cy.contains(\"Au moins 8 caractères, dont 1 majuscule, 1 minuscule et 1 chiffre. Parce qu'on sait jamais.\").should('be.visible');\ncy.url().should('eq', 'https://preprod.backmarket.fr/register');\ncy.get('#signup-email').should('have.css', 'border', '1px solid rgb(169, 15, 20)');",
+              "err": {},
+              "uuid": "588a38fe-ad00-4a23-bff4-4444f13786ef",
+              "parentUUID": "a84e07d3-ec83-4e26-8b12-c9e6457d8402",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "588a38fe-ad00-4a23-bff4-4444f13786ef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4141,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

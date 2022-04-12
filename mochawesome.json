@@ -1,24 +1,299 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 3,
-    "passes": 3,
+    "suites": 6,
+    "tests": 9,
+    "passes": 6,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-04-12T07:45:30.583Z",
-    "end": "2022-04-12T07:45:38.239Z",
-    "duration": 7556,
-    "testsRegistered": 3,
-    "passPercent": 100,
+    "failures": 2,
+    "start": "2022-04-12T09:19:13.365Z",
+    "end": "2022-04-12T09:19:54.192Z",
+    "duration": 22799,
+    "testsRegistered": 9,
+    "passPercent": 66.66666666666667,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
-    "skipped": 0,
-    "hasSkipped": false
+    "skipped": 1,
+    "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "0f52a5b4-5cf0-4fbf-a04d-826e2654c007",
+      "uuid": "9546f323-84b6-44bb-b5a6-e47b6c0f3ff6",
+      "title": "",
+      "fullFile": "cypress/integration/creation/test_creation_user_wrong_email.spec.js",
+      "file": "cypress/integration/creation/test_creation_user_wrong_email.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a84e07d3-ec83-4e26-8b12-c9e6457d8402",
+          "title": "Un utilisateur veut créer un nouveau compte avec nom prénom mail erroné et mot de passe valide",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "nom prénom et mot de passe correct mais pas le mail",
+              "fullTitle": "Un utilisateur veut créer un nouveau compte avec nom prénom mail erroné et mot de passe valide nom prénom et mot de passe correct mais pas le mail",
+              "timedOut": null,
+              "duration": 4141,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#firstName').type('jenson');\ncy.get('#lastName').type('wiatt');\ncy.get(\"#signup-email\").type('jenson.wiatt.com');\ncy.get(\"#signup-password\").type('Azerty123456');\ncy.get('[data-qa=\"signup-submit-button\"]').click(); // cy.contains(\"Au moins 8 caractères, dont 1 majuscule, 1 minuscule et 1 chiffre. Parce qu'on sait jamais.\").should('be.visible');\ncy.url().should('eq', 'https://preprod.backmarket.fr/register');\ncy.get('#signup-email').should('have.css', 'border', '1px solid rgb(169, 15, 20)');",
+              "err": {},
+              "uuid": "588a38fe-ad00-4a23-bff4-4444f13786ef",
+              "parentUUID": "a84e07d3-ec83-4e26-8b12-c9e6457d8402",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "588a38fe-ad00-4a23-bff4-4444f13786ef"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4141,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "5d0148d4-e8c7-496d-821b-71960c00b493",
+      "title": "",
+      "fullFile": "cypress/integration/creation/test_creation_user_wrong_password.spec.js",
+      "file": "cypress/integration/creation/test_creation_user_wrong_password.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a2942815-a10e-4cd8-811c-39f17ae21ca7",
+          "title": "Un utilisateur veut créer un nouveau compte avec nom prénom mail et mot de passe trop court",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "il remplit le champ nom prenom mail correctement mais pas la forme du mot de passe",
+              "fullTitle": "Un utilisateur veut créer un nouveau compte avec nom prénom mail et mot de passe trop court il remplit le champ nom prenom mail correctement mais pas la forme du mot de passe",
+              "timedOut": null,
+              "duration": 4116,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#firstName').type('jenson');\ncy.get('#lastName').type('wiatt');\ncy.get(\"#signup-email\").type('jenson.wiatt@orperfect.com');\ncy.get(\"#signup-password\").type('123456');\ncy.get('[data-qa=\"signup-submit-button\"]').click();\ncy.contains(\"Au moins 8 caractères, dont 1 majuscule, 1 minuscule et 1 chiffre. Parce qu'on sait jamais.\").should('be.visible');\ncy.url().should('eq', 'https://preprod.backmarket.fr/register');",
+              "err": {},
+              "uuid": "7c9a0889-b731-43b9-a1dc-f2c792137403",
+              "parentUUID": "a2942815-a10e-4cd8-811c-39f17ae21ca7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7c9a0889-b731-43b9-a1dc-f2c792137403"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4116,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "683b66b0-235e-4b33-a628-48b370d17126",
+      "title": "",
+      "fullFile": "cypress/integration/login/test_login_fail.spec.js",
+      "file": "cypress/integration/login/test_login_fail.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "af277c6e-4a8f-4436-ad7b-55047f929d54",
+          "title": "Un utilisateur veut se connecter avec un mot de passe incorrect",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "il remplit le champ mail correctement",
+              "fullTitle": "Un utilisateur veut se connecter avec un mot de passe incorrect il remplit le champ mail correctement",
+              "timedOut": null,
+              "duration": 3781,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signin-email\").type('grainsurlaplage@gmail.com');\ncy.get(\"#signin-email\").should('include.value', 'grainsurlaplage@gmail.com');\ncy.get(\"#signin-password\").type('mauvaisMotDePasse');\ncy.get(\"#signin-password\").should('include.value', 'mauvaisMotDePasse');\ncy.get('[data-qa=\"signin-submit-button\"]').click();\ncy.contains(\"Informations d'identification erronées\").should('be.visible');\ncy.url().should('eq', 'https://preprod.backmarket.fr/register');",
+              "err": {},
+              "uuid": "5022f1be-15ed-4df6-bb33-c53fbb78e101",
+              "parentUUID": "af277c6e-4a8f-4436-ad7b-55047f929d54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5022f1be-15ed-4df6-bb33-c53fbb78e101"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3781,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ceb016da-3932-441a-b674-4a8608535f41",
+      "title": "",
+      "fullFile": "cypress/integration/login/test_login_succes.spec.js",
+      "file": "cypress/integration/login/test_login_succes.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a891ac6c-a0fb-4630-9bee-ae8dca3f2434",
+          "title": "Un utilisateur veut se connecter avec son mail et son mot de passe",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "il remplit le champ mail et mot de passe correctement",
+              "fullTitle": "Un utilisateur veut se connecter avec son mail et son mot de passe il remplit le champ mail et mot de passe correctement",
+              "timedOut": null,
+              "duration": 227,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signin-email\").type('grainsurlaplage@gmail.com');\ncy.get(\"#signin-password\").type('Plopplop0');\ncy.get('[data-qa=\"signin-submit-button\"]').click();\ncy.url().should('contain', '/dashboard/orders');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://preprod.backmarket.fr/register\n\nThe response we received from your web server was:\n\n  > 429: Too Many Requests\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://preprod.backmarket.fr/register\n\nThe response we received from your web server was:\n\n  > 429: Too Many Requests\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at https://tastedive.com/__cypress/runner/cypress_runner.js:159309:84\n    at visitFailedByErr (https://tastedive.com/__cypress/runner/cypress_runner.js:158675:12)\n    at https://tastedive.com/__cypress/runner/cypress_runner.js:159289:13\n    at tryCatcher (https://tastedive.com/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://tastedive.com/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://tastedive.com/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://tastedive.com/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://tastedive.com/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (https://tastedive.com/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (https://tastedive.com/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://tastedive.com/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (https://tastedive.com/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (https://tastedive.com/__cypress/tests?p=cypress\\integration\\login\\test_login_succes.spec.js:101:6)",
+                "diff": null
+              },
+              "uuid": "5865c25a-50cd-4f61-89b3-18dd3ff1df5d",
+              "parentUUID": "a891ac6c-a0fb-4630-9bee-ae8dca3f2434",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5865c25a-50cd-4f61-89b3-18dd3ff1df5d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 227,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a5a45420-b2ea-4b77-84f0-7fc209eb831d",
+          "title": "Un utilisateur veut se connecter avec un mot de passe incorrect",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "il remplit le champ mail correctement",
+              "fullTitle": "Un utilisateur veut se connecter avec un mot de passe incorrect il remplit le champ mail correctement",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signin-email\").type('grainsurlaplage@gmail.com');\ncy.get(\"#signin-email\").should('include.value', 'grainsurlaplage@gmail.com');\ncy.get(\"#signin-password\").type('mauvaisMotDePasse');\ncy.get(\"#signin-password\").should('include.value', 'mauvaisMotDePasse');\ncy.get('[data-qa=\"signin-submit-button\"]').click();\ncy.contains(\"Informations d'identification erronées\").should('be.visible');\ncy.url().should('eq', 'https://preprod.backmarket.fr/register');",
+              "err": {},
+              "uuid": "d72a6019-41e5-414f-afd2-5ebda0aa8ec3",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "d72a6019-41e5-414f-afd2-5ebda0aa8ec3"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9730db27-b489-4d98-b892-de8415d29884",
       "title": "",
       "fullFile": "cypress/integration/test_api_tastedive.spec.js",
       "file": "cypress/integration/test_api_tastedive.spec.js",
@@ -27,7 +302,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4097542f-0c17-4640-9647-22250409ffe2",
+          "uuid": "e3b1218e-9e25-4383-bf01-47d3c4558483",
           "title": "essai",
           "fullFile": "",
           "file": "",
@@ -38,7 +313,7 @@
               "title": "cas pour ABBA et une limite de 10",
               "fullTitle": "essai cas pour ABBA et une limite de 10",
               "timedOut": null,
-              "duration": 3343,
+              "duration": 730,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +322,8 @@
               "context": null,
               "code": "cy.log(NewSearch);\ncy.similarSearchQ(NewSearch[0]).then(result => {\n  cy.log(JSON.stringify(result));\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal('ABBA'.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains('ABBA'.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[0].limit);\n});\ncy.similarSearchN(NewSearch[0].name, NewSearch[0].type, NewSearch[0].info, NewSearch[0].limit).then(result => {\n  cy.log(JSON.stringify(result));\n  cy.log(\"1\" + NewSearch[0].name);\n  cy.log(\"2\" + result.body.Similar.Info[0].Name.toLowerCase());\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal(NewSearch[0].name.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains(NewSearch[0].name.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[0].limit);\n});",
               "err": {},
-              "uuid": "1d39bc43-a6ea-40f0-877e-023b00471f85",
-              "parentUUID": "4097542f-0c17-4640-9647-22250409ffe2",
+              "uuid": "5d37dc07-9a58-4c49-9de4-b92cdd3c2357",
+              "parentUUID": "e3b1218e-9e25-4383-bf01-47d3c4558483",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +331,7 @@
               "title": "cas pour The cardigans et une limite de 15",
               "fullTitle": "essai cas pour The cardigans et une limite de 15",
               "timedOut": null,
-              "duration": 1910,
+              "duration": 645,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +340,8 @@
               "context": null,
               "code": "cy.log(NewSearch);\ncy.similarSearchQ(NewSearch[1]).then(result => {\n  cy.log(JSON.stringify(result));\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0); // expect(result.body.Similar.Info[0].Name).to.deep.equal('ABBA');\n  //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[1].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[1].limit);\n});\ncy.similarSearchN(NewSearch[1].name, NewSearch[1].type, NewSearch[1].info, NewSearch[1].limit).then(result => {\n  cy.log(JSON.stringify(result));\n  cy.log(\"1\" + NewSearch[1].name);\n  cy.log(\"2\" + result.body.Similar.Info[0].Name.toLowerCase());\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal(NewSearch[1].name.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains(NewSearch[1].name.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[1].limit);\n});",
               "err": {},
-              "uuid": "13576c0d-42dc-4e0d-9f8b-9f7f51985b44",
-              "parentUUID": "4097542f-0c17-4640-9647-22250409ffe2",
+              "uuid": "2479df96-e26b-47ee-8f42-c594c266a918",
+              "parentUUID": "e3b1218e-9e25-4383-bf01-47d3c4558483",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +349,7 @@
               "title": "cas pour Balavoine et une limite de 20",
               "fullTitle": "essai cas pour Balavoine et une limite de 20",
               "timedOut": null,
-              "duration": 2303,
+              "duration": 403,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +358,84 @@
               "context": null,
               "code": "cy.log(NewSearch);\ncy.similarSearchQ(NewSearch[2]).then(result => {\n  cy.log(JSON.stringify(result));\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0); // expect(result.body.Similar.Info[0].Name).to.deep.equal('ABBA');\n  //  expect(result.body.Similar.Results.length).to.be.eq(NewSearch[2].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[2].limit);\n});\ncy.similarSearchN(NewSearch[2].name, NewSearch[2].type, NewSearch[2].info, NewSearch[2].limit).then(result => {\n  cy.log(JSON.stringify(result));\n  cy.log(\"1\" + NewSearch[2].name);\n  cy.log(\"2\" + result.body.Similar.Info[0].Name.toLowerCase());\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal(NewSearch[2].name.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains(NewSearch[2].name.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[2].limit);\n});",
               "err": {},
-              "uuid": "3da8d271-20c5-4180-b6d3-a5d04d0ad89e",
-              "parentUUID": "4097542f-0c17-4640-9647-22250409ffe2",
+              "uuid": "628e9049-f962-4ec6-a29b-aacc80a8df50",
+              "parentUUID": "e3b1218e-9e25-4383-bf01-47d3c4558483",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1d39bc43-a6ea-40f0-877e-023b00471f85",
-            "13576c0d-42dc-4e0d-9f8b-9f7f51985b44",
-            "3da8d271-20c5-4180-b6d3-a5d04d0ad89e"
+            "5d37dc07-9a58-4c49-9de4-b92cdd3c2357",
+            "2479df96-e26b-47ee-8f42-c594c266a918",
+            "628e9049-f962-4ec6-a29b-aacc80a8df50"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7556,
+          "duration": 1778,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e85bc39c-0d40-404e-a073-a97d1414d7da",
+      "title": "",
+      "fullFile": "cypress/integration/creation/test_creation_user_pass.spec.js",
+      "file": "cypress/integration/creation/test_creation_user_pass.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "249684cc-a158-465e-8004-ba02d50023f6",
+          "title": "Un utilisateur veut créer un nouveau compte avec nom prénom mail et mot de passe corrects",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "il remplit le champ nom prenom mail et mot de passe correctement",
+              "fullTitle": "Un utilisateur veut créer un nouveau compte avec nom prénom mail et mot de passe corrects il remplit le champ nom prenom mail et mot de passe correctement",
+              "timedOut": null,
+              "duration": 8756,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#firstName').type('jenson');\ncy.get('#lastName').type('wiatt');\ncy.get(\"#signup-email\").type('jenson.wiatt@orperfect.com');\ncy.get(\"#signup-password\").type('Azerty123456');\ncy.get('[data-qa=\"signup-submit-button\"]').click();\ncy.url().should('eq', 'https://preprod.backmarket.fr/dashboard/orders');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'https://preprod.backmarket.fr/register' to equal 'https://preprod.backmarket.fr/dashboard/orders'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'https://preprod.backmarket.fr/register' to equal 'https://preprod.backmarket.fr/dashboard/orders'\n    at Context.eval (https://preprod.backmarket.fr/__cypress/tests?p=cypress\\integration\\creation\\test_creation_user_pass.spec.js:111:14)",
+                "diff": "- 'https://preprod.backmarket.fr/register'\n+ 'https://preprod.backmarket.fr/dashboard/orders'\n"
+              },
+              "uuid": "266ea18d-6b4c-4b65-bbde-369366ff3994",
+              "parentUUID": "249684cc-a158-465e-8004-ba02d50023f6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "266ea18d-6b4c-4b65-bbde-369366ff3994"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8756,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
