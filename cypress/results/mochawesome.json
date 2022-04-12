@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-12T07:45:30.583Z",
+    "end": "2022-04-12T07:45:38.239Z",
+    "duration": 7656,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0f52a5b4-5cf0-4fbf-a04d-826e2654c007",
+      "title": "",
+      "fullFile": "cypress/integration/test_api_tastedive.spec.js",
+      "file": "cypress/integration/test_api_tastedive.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4097542f-0c17-4640-9647-22250409ffe2",
+          "title": "essai",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cas pour ABBA et une limite de 10",
+              "fullTitle": "essai cas pour ABBA et une limite de 10",
+              "timedOut": null,
+              "duration": 3343,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(NewSearch);\ncy.similarSearchQ(NewSearch[0]).then(result => {\n  cy.log(JSON.stringify(result));\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal('ABBA'.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains('ABBA'.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[0].limit);\n});\ncy.similarSearchN(NewSearch[0].name, NewSearch[0].type, NewSearch[0].info, NewSearch[0].limit).then(result => {\n  cy.log(JSON.stringify(result));\n  cy.log(\"1\" + NewSearch[0].name);\n  cy.log(\"2\" + result.body.Similar.Info[0].Name.toLowerCase());\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal(NewSearch[0].name.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains(NewSearch[0].name.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[0].limit);\n});",
+              "err": {},
+              "uuid": "1d39bc43-a6ea-40f0-877e-023b00471f85",
+              "parentUUID": "4097542f-0c17-4640-9647-22250409ffe2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cas pour The cardigans et une limite de 15",
+              "fullTitle": "essai cas pour The cardigans et une limite de 15",
+              "timedOut": null,
+              "duration": 1910,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(NewSearch);\ncy.similarSearchQ(NewSearch[1]).then(result => {\n  cy.log(JSON.stringify(result));\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0); // expect(result.body.Similar.Info[0].Name).to.deep.equal('ABBA');\n  //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[1].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[1].limit);\n});\ncy.similarSearchN(NewSearch[1].name, NewSearch[1].type, NewSearch[1].info, NewSearch[1].limit).then(result => {\n  cy.log(JSON.stringify(result));\n  cy.log(\"1\" + NewSearch[1].name);\n  cy.log(\"2\" + result.body.Similar.Info[0].Name.toLowerCase());\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal(NewSearch[1].name.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains(NewSearch[1].name.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[1].limit);\n});",
+              "err": {},
+              "uuid": "13576c0d-42dc-4e0d-9f8b-9f7f51985b44",
+              "parentUUID": "4097542f-0c17-4640-9647-22250409ffe2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cas pour Balavoine et une limite de 20",
+              "fullTitle": "essai cas pour Balavoine et une limite de 20",
+              "timedOut": null,
+              "duration": 2303,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(NewSearch);\ncy.similarSearchQ(NewSearch[2]).then(result => {\n  cy.log(JSON.stringify(result));\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0); // expect(result.body.Similar.Info[0].Name).to.deep.equal('ABBA');\n  //  expect(result.body.Similar.Results.length).to.be.eq(NewSearch[2].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[2].limit);\n});\ncy.similarSearchN(NewSearch[2].name, NewSearch[2].type, NewSearch[2].info, NewSearch[2].limit).then(result => {\n  cy.log(JSON.stringify(result));\n  cy.log(\"1\" + NewSearch[2].name);\n  cy.log(\"2\" + result.body.Similar.Info[0].Name.toLowerCase());\n  expect(result).to.exist;\n  expect(result.body.Similar).to.exist;\n  expect(result.body.Similar.Info.length).to.be.gt(0);\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).to.be.equal(NewSearch[2].name.toLowerCase());\n  expect(result.body.Similar.Info[0].Name.toLowerCase()).contains(NewSearch[2].name.toLowerCase()); //expect(result.body.Similar.Results.length).to.be.eq(NewSearch[0].limit);\n  expect(result.body.Similar.Results.length).to.have.at.most(NewSearch[2].limit);\n});",
+              "err": {},
+              "uuid": "3da8d271-20c5-4180-b6d3-a5d04d0ad89e",
+              "parentUUID": "4097542f-0c17-4640-9647-22250409ffe2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1d39bc43-a6ea-40f0-877e-023b00471f85",
+            "13576c0d-42dc-4e0d-9f8b-9f7f51985b44",
+            "3da8d271-20c5-4180-b6d3-a5d04d0ad89e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7556,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
